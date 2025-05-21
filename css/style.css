@@ -1,0 +1,230 @@
+:root{
+    --color-background:#F7F7FF;
+    --color-background-container:#ffffff;
+    --color-header: #070600;
+    --color-remove-btn:#EA526F;
+    --color-letters: #279AF1;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {font-size: 62.5%;}
+
+body {
+    background-color: var(--color-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: sans-serif;
+     position: relative;
+}
+
+
+/*************/
+/* Container */
+/*************/
+.container{
+    background-color: var(--color-background-container);
+    width: 100%;
+    max-width: 50rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 1rem 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 2rem;
+}
+
+
+/*************/
+/*   Title   */
+/*************/
+.container h1{
+    font-size: 3rem;
+    color: var(--color-header);
+    margin-bottom: 2rem;
+}
+
+
+/**********************/
+/* BookMark Container */
+/**********************/
+.addBookmarkContainer{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    text-align: left;
+    padding: 0 2rem;
+}
+
+.addBookmarkContainer label{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-letters);
+    padding-left: 1.5rem;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.addBookmarkContainer input{
+    padding: 0.8rem 0.5rem;
+    color: var(--color-header);
+    font-size: 1.5rem;
+    border-radius: 0.8rem;
+    border: 0.2rem solid #d7d7d6;
+    margin-bottom: 2rem;
+}
+
+.addBookmarkContainer input:focus{
+    outline: none;
+    border: 0.2rem solid #9c9b99;
+}
+
+.addBookmarkContainer button{
+    border: none;
+    cursor: pointer;
+    background-color: var(--color-letters);
+    color: var(--color-background-container);
+    font-size: 1.8rem;
+    padding: 1rem;
+    border-radius: 0.8rem;
+}
+
+.addBookmarkContainer button:hover{background-color: #238bd9;}
+
+#bookmarkList{
+    list-style: none;
+    padding: 0 2rem;
+    overflow-y: auto;
+    max-height: 37rem;
+}
+
+#bookmarkList li{
+    background-color: var(--color-background);
+    padding: 1rem;
+    border-radius: 0.8rem;
+    margin-bottom: 1rem;
+    border-right: 5px solid;
+    border-right-color: var(--color-letters);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#bookmarkList a{
+    color: var(--color-letters);
+    text-decoration: none;
+    font-size: 1.6rem;
+}
+
+.removeBookMark{
+    cursor: pointer;
+    border: none;
+    padding: 0.8rem 1rem;
+    font-size: 1.5rem;
+    color: var(--color-background-container);
+    background-color: var(--color-remove-btn);
+    border-radius: 0.8rem;
+}
+
+.removeBookMark:hover{background-color: #d34a64;}
+
+
+/*************/
+/* Scrollbar */
+/*************/
+::-webkit-scrollbar{
+    background-color: transparent;
+    width: 0.8rem;
+}
+
+::-webkit-scrollbar-thumb{  
+    background-color: var(--color-letters);
+    border-radius: 2rem;
+}
+
+
+/****************/
+/* Modal Window */
+/****************/
+.hidden{display: none;}
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+}
+
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    background-color: var(--color-background-container);
+    padding: 6rem 6rem 4rem 6rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+}
+
+#modalClose{
+    position: absolute;
+    top: 2rem;
+    right: 2.5rem;
+    font-size: 3rem;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: var(--color-header);
+}
+
+.modalText{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+#confirm,
+#cancel{
+    font-size: 1.5rem;
+    color: var(--color-background-container);
+    border: none;
+    cursor: pointer;
+    padding: 0.8rem 2rem;
+    border-radius: 0.8rem;
+}
+
+#confirm{background-color: #36cc32;}
+#confirm:hover{background-color: #1DC619;}
+#cancel{background-color:#d14249;}
+#cancel:hover{background-color:#c6131b;}
+
+
+
+/************************************/
+/* BELOW 1200px (Landscape Tablets) */
+/************************************/
+@media (max-width: 75em) {html {font-size: 56.25%;}}
+
+
+/******************************/
+/* BELOW 402px (small Phones) */
+/******************************/
+@media (max-width: 25.2em) {
+    html {font-size: 50%;}
+    body{background-color: yellow;}
+    .modal{padding: 6rem 3rem 4rem 3rem;}
+}

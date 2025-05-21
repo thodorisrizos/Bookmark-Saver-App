@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keyword" content="Bookmark app, Bookmark"/>
+    <meta name="author" content="Thodoris Rizos" />
+    <title>Bookmark App</title>
+    <link rel="icon" href="img/favicon/favicon.ico" />
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="scripts/script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>BookMark Saver</h1>
+
+        <div class="addBookmarkContainer">
+            <label for="">Name:</label>
+            <input id="name"  placeholder="Enter name..." type="text">
+
+            <label for="">Url:</label>
+            <input id="url" placeholder="Enter url..." type="url">
+
+            <button id="addBookmark">Add</button>
+        </div>
+
+        <ul id="bookmarkList"></ul>
+    </div>
+
+    <div class="modal hidden">
+        <button id="modalClose">&times;</button>
+
+        <p class="modalText">Are you sure, you want to delete this bookmark?</p>
+        
+        <div class="buttonContainer">
+            <button id="confirm">Yes</button>
+            <button id="cancel">Back</button>
+        </div>
+    </div>
+
+    <div class="overlay hidden"></div>
+</body>
+</html>
